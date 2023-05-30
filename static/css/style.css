@@ -1,7 +1,9 @@
-body {
-  font-family: "Open Sans", sans-serif;
-  background: url("../img/body.png") no-repeat center center fixed;
-  background-size: cover;
+/* ------ Disable Hubspot chatbot ----*/
+#hubspot-messages-iframe-container {
+  display: none !important;
+  z-index: 1 !important;
+  opacity: 0 !important;
+  visibility: hidden;
 }
 
 /* ============= css related to chats =============== */
@@ -9,28 +11,31 @@ body {
 .widget {
   display: none;
   width: 350px;
+  max-width: 80%;
   right: 15px;
   height: 500px;
-  bottom: 5%;
+  bottom: 15px;
   position: fixed;
   background: #fff;
   border-radius: 10px 10px 10px 10px;
   box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 5px 0 #00000096;
+  z-index: 100001;
 }
 
 .chat_header {
   height: 60px;
-  background: #060dcfc7;
+  background: #004B94;
   border-radius: 10px 10px 0px 0px;
   padding: 5px;
   font-size: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .chat_header_title {
   color: white;
-  float: left;
-  margin-top: 3%;
-  margin-left: 35%;
+  margin-right: 10px;
 }
 
 .chats {
@@ -122,7 +127,7 @@ textarea-webkit-scrollbar {
   padding: 10px;
   float: right;
   margin-right: 0.5em;
-  background: #060dcfc7;
+  background: #004B94;
   color: white;
   margin-bottom: 0.15em;
   font-size: 13px;
@@ -156,14 +161,14 @@ blockquote {
 .usrInput {
   padding: 0.5em;
   width: 80%;
-  margin-left: 4%;
   border: 0;
   padding-left: 15px;
   height: 40px;
 }
 
 .keypad {
-  /* display: none;  */
+  display:flex;
+  justify-content: space-between;
   background: white;
   height: 50px;
   position: absolute;
@@ -179,29 +184,29 @@ blockquote {
   width: 20px;
   border-radius: 50%;
   display: inline-block;
-  float: right;
-  margin-right: 30px;
+  margin-right: 20px;
   text-align: center;
   padding: 5px;
   font-size: 20px;
   cursor: pointer;
-  color: #060dcfc7;
+  color: #004B94;
 }
 
 .imgProfile {
   box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.16), 0 0px 10px 0 #00000096;
   border-radius: 50px;
-  width: 60%;
+  width: auto;
 }
 
 .profile_div {
   /* display: none; */
   position: fixed;
-  padding: 5px;
-  width: 10%;
+  padding: 15px;
+  width: 90px;
   bottom: 0;
   right: 0;
   cursor: pointer;
+  z-index: 99999999999;
 }
 
 /* css for dropdown menu of the bot */
@@ -222,7 +227,7 @@ blockquote {
 
 .dropdown-content li > a,
 .dropdown-content li > span {
-  color: #060dcfc7;
+  color: #004B94;
 }
 
 @keyframes animateElement {
@@ -329,7 +334,7 @@ blockquote {
 
 .order,
 #closeContents {
-  color: #060dcfc7;
+  color: #004B94;
 }
 
 .metadata_2,
@@ -437,7 +442,7 @@ div.content_data::-webkit-scrollbar {
 
 .menuChips {
   display: block;
-  background: #060dcfc7;
+  background: #004B94;
   color: #fff;
   text-align: center;
   padding: 5px;
@@ -600,7 +605,7 @@ div.content_data::-webkit-scrollbar {
   font-size: 15px;
   /* font-weight: 600; */
   padding: 5px;
-  /* color:#060dcfc7; */
+  /* color:#004B94; */
   color: #ffffff;
   cursor: pointer;
 }
@@ -662,14 +667,14 @@ div.content_data::-webkit-scrollbar {
 
 .chip {
   background-color: white;
-  border: 1px solid#060dcfc7;
-  color: #060dcfc7;
+  border: 1px solid#004B94;
+  color: #004B94;
   font-weight: bolder;
   text-align: center;
 }
 
 .chip:hover {
-  background-color: #060dcfc7;
+  background-color: #004B94;
   color: white;
 }
 
@@ -721,7 +726,7 @@ div.content_data::-webkit-scrollbar {
 
 .collapsible-header {
   font-weight: bold;
-  color: #060dcfc7;
+  color: #004B94;
 }
 
 ul.collapsible > li:first-child .collapsible-header {
@@ -729,7 +734,7 @@ ul.collapsible > li:first-child .collapsible-header {
 }
 
 ul.collapsible > li:last-child .collapsible-header {
-  color: #060dcfc7;
+  color: #004B94;
   border-radius: 0px 0px 20px 20px;
 }
 
@@ -761,7 +766,7 @@ ul.collapsible > li:last-child .collapsible-body {
 .botTyping > div {
   width: 10px;
   height: 10px;
-  background-color: #060dcfc7;
+  background-color: #004B94;
   border-radius: 100%;
   display: inline-block;
   -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
@@ -828,7 +833,7 @@ video:focus {
 
 .tap-target {
   color: #fff;
-  background: #060dcfc7;
+  background: #004B94;
 }
 
 .pdf_attachment {
@@ -845,7 +850,7 @@ video:focus {
   height: 100%;
   font-size: 25px;
   padding: 7% !important;
-  background-color: #060dcfc7;
+  background-color: #004B94;
   color: white;
 }
 
@@ -857,5 +862,5 @@ video:focus {
 }
 
 .pdf_link a {
-  color: #060dcfc7;
+  color: #004B94;
 }
